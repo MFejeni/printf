@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 #define BUFF_SIZE 1024
-#define UNUSED(x) void (x)
+
 
 
 int _printf(const char *format, ...);
@@ -41,5 +41,7 @@ int write_number(int is_positive, int indicat, int size);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
+
+int main(void);
 
 #endif
