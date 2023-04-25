@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			print_buffer(buffer, &buff_num);
 			
 			++i;
-			printed = print_control(format, &i, list);
+			printed = print_control(format, &i, list, size);
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;

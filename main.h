@@ -10,7 +10,7 @@
 
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i, va_list list, int size);
+int print_control(const char *fmt, int *i, va_list list, int size);
 
 /**
  * struct fmt - Struct op
