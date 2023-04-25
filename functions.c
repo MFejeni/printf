@@ -30,8 +30,6 @@ int print_string(va_list types, int size)
 	while (str[length] != '\0')
 		length++;
 
-	if (precision >= 0 && precision < length)
-		length = precision;
 
 	for (i = length; i > 0; i--)
 		write(1, " ", 1);
