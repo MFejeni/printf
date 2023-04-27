@@ -14,15 +14,13 @@ int write_char_control(char c)
 
 /**
  * write_number - Prints a string
- * @is_negative: List of arguments
- * @indicat: number to beprinted
+ * @number: number to beprinted
  * @size: Size specifier
  *
  * Return: Number of chars printed.
  */
 int write_number(int number, int size)
 {
-	
 	UNUSED(size);
 	return (put_num(number));
 }
@@ -36,6 +34,7 @@ int write_number(int number, int size)
 int put_num(int num)
 {
 	char str[16];
+
 	sprintf(str, "%d", num);
 	return (write(1, str, strlen(str)));
 }
