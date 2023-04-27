@@ -20,12 +20,12 @@ int write_char_control(char c)
  */
 int write_number(int is_negative, int indicat, int size)
 {
-	char neg_ch = ' ';
+	char neg_ch = ' ', buff[BUFF_SIZE];
 
 	UNUSED(size);
 
 	if (is_negative)
 		neg_ch = '-';
-
-	return (write(indicat, &neg_ch, 1));
+	write(indicat, &neg_ch, 1);
+	return (write(indicat, &buff, size));
 }
