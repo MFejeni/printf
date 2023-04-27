@@ -2,13 +2,12 @@
 /**
  * write_char_control - Prints a string as given in form of char
  * @c: char to be printed
- * @size: Size specifier
  *
  * Return: Number of chars printed.
  */
 int write_char_control(char c)
-{ 
-	return (write(1,&c, 1));
+{
+	return (write(1, &c, 1));
 }
 
 /**

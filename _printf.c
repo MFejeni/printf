@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			print_buffer(buffer, &buff_num);
-			
+
 			++i;
 			size = arg_size(format, &i);
 			printed = print_control(format, &i, list, size);
