@@ -9,7 +9,8 @@ int print_char(va_list types, int size)
 {
 	char c = va_arg(types, int);
 
-	return (write_char_control(c, size));
+	UNUSED(size);
+	return (write_char_control(c));
 }
 /**
  * print_string - Prints a string
@@ -22,6 +23,7 @@ int print_string(va_list types, int size)
 	int length = 0, i;
 	char *str = va_arg(types, char *);
 
+	UNUSED(size);
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -40,19 +42,21 @@ int print_string(va_list types, int size)
 
 /**
  * print_percent - Prints a percent sign
- * @types: Lista of arguments
+ * @types: List of arguments
  * @size: Size specifier
  * Return: Number of chars printed
  */
 int print_percent(va_list types, int size)
 {
+	UNUSED(types);
+	UNUSED(size);
 
 	return (write(1, "%%", 1));
 }
 
 /*
- * print_int - Print int
- * @types: Lista of arguments
+ * print_int - Prints an int
+ * @types: List of arguments
  * @size: Size specifier
  * Return: Number of chars printed
  */
@@ -95,6 +99,7 @@ int print_binary(va_list types, int size)
 	unsigned int a[32];
 	int count;
 
+	UNUSED(size);
 	n = va_arg(types, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
@@ -115,4 +120,22 @@ int print_binary(va_list types, int size)
 		}
 	}
 	return (count);
+}
+
+/**
+ * convert_size_number - Casts a number to S_LONG or S_SHORT
+ * @num: Number to be casted.
+ * @size: Number indicating the type to be casted.
+ *
+ * Return: Casted value of num
+ */
+
+long int convert_size_number(long int num, int size)
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((short)num);
+
+	return ((int)num);
 }

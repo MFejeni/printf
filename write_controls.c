@@ -21,7 +21,6 @@ int write_char_control(char c)
  */
 int write_number(int is_negative, int indicat, int size)
 {
-	int length = BUFF_SIZE - indicat - 1;
 	char extra_ch = 0;
 
 	UNUSED(size);
