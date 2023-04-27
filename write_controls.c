@@ -38,3 +38,31 @@ int put_num(int num)
 	sprintf(str, "%d", num);
 	return (write(1, str, strlen(str)));
 }
+
+/**
+ * put_hex - prints hex
+ * @num: num to print in hex
+ * Return: 1 for success
+ */
+
+int put_hex(int num)
+{
+	char str[16];
+
+	sprintf(str, "%x", num);
+	return (write(1, str, strlen(str)));
+}
+
+/**
+ * put_octal - prints octal
+ * @num: num to print in octal
+ * Return: 1 for success
+ */
+
+int put_octal(int num)
+{
+        char str[16];
+
+        sprintf(str, "%o", num);
+        return (write(1, str, strlen(str)));
+}

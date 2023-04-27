@@ -32,13 +32,6 @@ int print_string(va_list types, int size)
 	while (str[length] != '\0')
 		length++;
 
-
-/*
- *	for (i = length; i > 0; i--)
-*		write(1, " ", 1);
-*	write(1, &str[0], length);
-*/
-
 	return (write(1, str, length));
 }
 
@@ -71,7 +64,7 @@ int print_int(va_list types, int size)
 	n = convert_size_number(n, size);
 
 
-	return (write_number(n, sizeof(unsigned long int)));
+	return (write_number(n, sizeof(long int)));
 }
 
 /**

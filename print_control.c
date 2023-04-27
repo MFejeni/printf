@@ -14,6 +14,8 @@ int print_control(const char *fmt, int *indicat, va_list list, int size)
 	fmt_t fmt_types[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
 		{'i', print_int}, {'d', print_int}, {'b', print_binary},
+		{'X', print_Hexa}, {'x', print_hex}, {'o', print_octal},
+		{'u', print_unsigned},
 		{'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)

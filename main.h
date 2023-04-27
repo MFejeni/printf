@@ -40,6 +40,16 @@ int write_char_control(char c);
 int write_number(int number, int size);
 int put_num(int num);
 
+int print_hex(va_list types, int size);
+int print_octal(va_list types, int size);
+int print_unsigned(va_list types, int size);
+int print_Hexa(va_list types, int size);
+
+int put_hex(int num);
+int put_octal(int num);
+int put_unsigned(int num);
+int put_Hexa(int num);
+
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
