@@ -14,19 +14,19 @@ int write_char_control(char c)
 /**
  * write_number - Prints a string
  * @is_negative: List of arguments
- * @indicat: char types.
+ * @indicat: number to beprinted
  * @size: Size specifier
  *
  * Return: Number of chars printed.
  */
 int write_number(int is_negative, int indicat, int size)
 {
-	char extra_ch = 0;
+	char neg_ch = ' ';
 
 	UNUSED(size);
 
 	if (is_negative)
-		extra_ch = '-';
+		neg_ch = '-';
 
-	return (write(1, &extra_ch, indicat));
+	return (write(indicat, &neg_ch, 1));
 }

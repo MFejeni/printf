@@ -20,7 +20,7 @@ int print_char(va_list types, int size)
  */
 int print_string(va_list types, int size)
 {
-	int length = 0, i;
+	int length = 0;
 	char *str = va_arg(types, char *);
 
 	UNUSED(size);
@@ -33,9 +33,9 @@ int print_string(va_list types, int size)
 		length++;
 
 
-	for (i = length; i > 0; i--)
+/*	for (i = length; i > 0; i--)
 		write(1, " ", 1);
-	write(1, &str[0], length);
+	write(1, &str[0], length);*/
 
 	return (write(1, str, length));
 }
