@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+
 /**
  * write_char_control - Prints a string as given in form of char
  * @c: char to be printed
@@ -18,14 +20,22 @@ int write_char_control(char c)
  *
  * Return: Number of chars printed.
  */
-int write_number(int is_negative, int indicat, int size)
+int write_number(int number, int size)
 {
-	char neg_ch = ' ', buff[BUFF_SIZE];
-
+	
 	UNUSED(size);
+	return (put_num(number));
+}
 
-	if (is_negative)
-		neg_ch = '-';
-	write(indicat, &neg_ch, 1);
-	return (write(indicat, &buff, size));
+/**
+ * put_num - tries to print numbers
+ * @num: num to print
+ * Return: 1 for success
+ */
+
+int put_num(int num)
+{
+	char str[16];
+	sprintf(str, "%d", num);
+	return (write(1, str, strlen(str)));
 }

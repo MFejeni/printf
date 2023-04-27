@@ -37,8 +37,8 @@ int print_binary(va_list types, int size);
 
 void print_buffer(char buffer[], int *buff_num);
 int write_char_control(char c);
-int write_number(int is_positive, int indicat, int size);
-
+int write_number(int number, int size);
+int put_num(int num);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);

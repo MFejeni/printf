@@ -79,15 +79,11 @@ int print_int(va_list types, int size)
 		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
 	}
-/**
-*	while (num > 0)
-*	{
-*		num /= 10;
-*	}
-*/
-	i++;
 
-	return (write(is_negative, &num, sizeof(unsigned long int)));
+	i++;
+	UNUSED(is_negative);
+	UNUSED(num);
+	return (write_number(num, sizeof(unsigned long int)));
 }
 
 /**
