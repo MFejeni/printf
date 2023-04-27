@@ -65,25 +65,13 @@ int print_percent(va_list types, int size)
 
 int print_int(va_list types, int size)
 {
-	int i = BUFF_SIZE - 2;
-	int is_negative = 0;
+
 	long int n = va_arg(types, long int);
-	unsigned long int num;
 
 	n = convert_size_number(n, size);
 
-	num = (unsigned long int)n;
 
-	if (n < 0)
-	{
-		num = (unsigned long int)((-1) * n);
-		is_negative = 1;
-	}
-
-	i++;
-	UNUSED(is_negative);
-	UNUSED(num);
-	return (write_number(num, sizeof(unsigned long int)));
+	return (write_number(n, sizeof(unsigned long int)));
 }
 
 /**
