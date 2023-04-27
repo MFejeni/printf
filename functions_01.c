@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * convert_size_number - Casts a number to S_LONG or S_SHORT
  * @num: Number to be casted.
